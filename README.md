@@ -11,9 +11,7 @@ Mira **Despliegue** para conocer como desplegar el proyecto.
 
 ### Pre-requisitos 📋
 
-```
-[.Net Core 3.1.404](https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.404-windows-x64-installer)
-```
+* [.Net Core 3.1.404](https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-3.1.404-windows-x64-installer)
 
 ### Instalación 🔧
 
