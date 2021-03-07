@@ -1,0 +1,28 @@
+﻿@model IEnumerable<PlantillaMVC.Models.Tecnica>
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <title>Lista de Tecnicas</title>
+</head>
+<body>
+    <br>
+    <br>
+    <h3>Tecnicas</h3> <a asp-controller="Home" asp-action="TecnicasAdd">Añadir Tecnicas</a> <a asp-controller="Home" asp-action="PersonajeList">Ir a Personajes</a>
+    <table>
+        <thead>
+            <tr><th>Tecnica</th></tr>
+        </thead>
+        <tbody>
+            @foreach (PlantillaMVC.Models.Tecnica tecnica in Model)
+            {
+                <tr>
+                    <td>@tecnica.nombre</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <hr />
+</body>
+</html>

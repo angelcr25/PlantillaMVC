@@ -1,0 +1,29 @@
+﻿@model Compendium.Models.Tecnica
+@{
+    Layout = null;
+    var personajes = ViewBag.Personajes;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Creación de Tecnica</title>
+</head>
+<body>
+    <form asp-action="TecnicaAdd" method="post">
+        <div class="form-group">
+            <label asp-for="nombre">Nombre</label>
+            <input asp-for="nombre" class="form-control" placeholder="Nombre" required />
+        </div>
+        <div class="form-group">
+            <label asp-for="personaje.nombre" for="exampleFormControlSelect2">Personaje</label>
+            <select asp-for="personaje.nombre" multiple class="form-control" id="excmpleFormControlSelect2" required>
+                @foreach (var personaje in personajes)
+                {
+                    <option>@personajes.nombre</option>
+                }
+            </select>
+        </div>
+        <button type="submit">Añadir Tecnica</button>
+    </form>
+</body>
+</html>

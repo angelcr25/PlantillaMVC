@@ -11,27 +11,32 @@ namespace PlantillaMVC.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        public IActionResult Index() => View("Index");
 
-        public HomeController(ILogger<HomeController> logger)
+        public IActionResult TecnicaAdd()
         {
-            _logger = logger;
+            List<Personaje> personajes = Repositorio.Personajes.ToList();
+            ViewBag.Personajes = personajes;
+            return View("TecnicaAdd");
         }
 
-        public IActionResult Index()
+        public IActionResult PersonajeAdd() => View("PersonajeAdd");
+
+        [HttpPost]
+        public IActionResult PersonajeAdd(Personaje personaje)
         {
-            return View();
+            Repositorio.AgregarPersonaje(personaje);
+            return View("PersonajeList", Repositorio.Personajes);
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult TecnicaAdd(Tecnica tecnica)
         {
-            return View();
+            Repositorio.AgregarTecnica(tecnica);
+            return View("TecnicaList", Repositorio.Tecnicas);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        public ViewResult TecnicaList() => View(Repositorio.Tecnicas);
+        public ViewResult PersonajeList() => View(Repositorio.Personajes);
     }
 }

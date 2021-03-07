@@ -1,0 +1,28 @@
+﻿@model IEnumerable<PlantillaMVC.Models.Personaje>
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <title>Lista de Personajes</title>
+</head>
+<body>
+    <br>
+    <br>
+            <h3>Personajes</h3> <a asp-controller="Home" asp-action="PersonajeAdd">Añadir Personajes</a> <a asp-controller="Home" asp-action="TecnicaList">Ir a Tecnicas</a>
+            <table>
+                <thead>
+                    <tr><th>Personaje</th></tr>
+                </thead>
+                <tbody>
+                    @foreach (PlantillaMVC.Models.Personaje personaje in Model)
+                    {
+                        <tr>
+                            <td>@personaje.nombre</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <hr />
+</body>
+</html>
