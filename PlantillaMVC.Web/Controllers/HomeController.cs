@@ -30,13 +30,13 @@ namespace PlantillaMVC.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult TecnicaAdd(Tecnica tecnica)
+        public IActionResult TecnicaAdd(Jutsu tecnica)
         {
             Repositorio.AgregarTecnica(tecnica);
-            return View("TecnicaList", Repositorio.Tecnicas);
+            return View("TecnicaList", Repositorio.Jutsus);
         }
 
-        public ViewResult TecnicaList() => View(Repositorio.Tecnicas);
+        public ViewResult TecnicaList() => View(Repositorio.Jutsus);
         public ViewResult PersonajeList() => View(Repositorio.Personajes);
     }
 }
