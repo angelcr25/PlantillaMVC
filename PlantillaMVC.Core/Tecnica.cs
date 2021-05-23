@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace PlantillaMVC.Core
 {
-    public class Jutsu
+    public class Tecnica
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
-        public List<Jutsu> Jutus { get; set; }
+        public List<Tecnica> Tecnicas { get; set; }
     }
 }

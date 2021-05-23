@@ -7,28 +7,32 @@ namespace PlantillaMVC.Core
     class Repositorio
     {
         static int idPersonaje = 1;
-        static int idJutsu = 1;
+        static int idTecnica = 1;
 
         private static List<Personaje> personajes = new List<Personaje>();
         public static IEnumerable<Personaje> Personajes => personajes;
+
         public static void AgregarPersonaje(Personaje personaje)
         {
             personaje.Id = idPersonaje++;
         }
 
+        public static void EliminarPersonaje(Personaje personaje)
+        => personajes.RemoveAll(c => c.Id == personaje.Id);
 
-        private static List<Jutsu> jutsus = new List<Jutsu>();
 
-        public static IEnumerable<Jutsu> Jutsus => jutsus;
+        private static List<Tecnica> tecnicas = new List<Tecnica>();
 
-        public static Jutsu GetJutsu(int id)
-                    => jutsus.Find(c => c.Id == id);
-        public static void AgregarJutsu(Jutsu jutsu)
+        public static IEnumerable<Tecnica> Tecnicas => tecnicas;
+
+        public static Tecnica Getenica(int id)
+                    => tecnicas.Find(c => c.Id == id);
+        public static void AgregarTecnica(Tecnica tecnica)
         {
-            jutsu.Id = idJutsu++;
-            jutsus.Add(jutsu);
+            tecnica.Id = idTecnica++;
+            tecnicas.Add(tecnica);
         }
-        public static void EliminarJutsu(Jutsu jutsu)
-            => jutsus.RemoveAll(c => c.Id == jutsu.Id);
+        public static void EliminarTecnica(Tecnica tecnica)
+         => tecnicas.RemoveAll(c => c.Id == tecnica.Id);
     }
 }

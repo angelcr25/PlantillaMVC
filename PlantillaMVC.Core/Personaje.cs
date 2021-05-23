@@ -8,6 +8,6 @@ namespace PlantillaMVC.Core
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
-        public List<Jutsu> Jutus { get; set; }
+        public List<Tecnica> Tecnicas { get; set; }
     }
 }
