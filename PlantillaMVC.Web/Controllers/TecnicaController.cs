@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace PlantillaMVC.Web.Controllers
 {
-    public class TecnicaController
+    public class TecnicaController : Controller
     {
         public IActionResult Index()
             => View(Repositorio.Tecnicas);

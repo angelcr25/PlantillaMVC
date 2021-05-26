@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PlantillaMVC.Core
 {
-    class Repositorio
+    public class Repositorio
     {
         static int idPersonaje = 1;
         static int idTecnica = 1;
