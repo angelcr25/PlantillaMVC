@@ -15,6 +15,7 @@ namespace PlantillaMVC.Core
         public static void AgregarPersonaje(Personaje personaje)
         {
             personaje.Id = idPersonaje++;
+            personajes.Add(personaje);
         }
 
         public static void EliminarPersonaje(Personaje personaje)

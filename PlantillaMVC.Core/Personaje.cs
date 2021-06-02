@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PlantillaMVC.Core
 {
-    class Personaje
+    public class Personaje
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
